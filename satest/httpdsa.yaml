@@ -1,12 +1,12 @@
 apiVersion: v1
 imagePullSecrets:
-- name: httpdsa-dockercfg-q2ngk
+- name: httpdsa-dockercfg-f8c2v
 kind: ServiceAccount
 metadata:
-  creationTimestamp: "2023-08-28T12:55:16Z"
+  creationTimestamp: "2023-08-28T14:57:16Z"
   name: httpdsa
   namespace: satest
-  resourceVersion: "63063"
-  uid: e3542fda-a1ed-4ab5-8ed5-c94dcc2fbedf
+  resourceVersion: "105989"
+  uid: 15a9132b-ccad-4c8b-9a6f-5529dd14ce93
 secrets:
-- name: httpdsa-dockercfg-q2ngk
+- name: httpdsa-dockercfg-f8c2v
