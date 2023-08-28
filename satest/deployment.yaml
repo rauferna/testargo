@@ -1,63 +1,63 @@
 apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    annotations:
-      alpha.image.policy.openshift.io/resolve-names: '*'
-      app.openshift.io/route-disabled: "false"
-      app.openshift.io/vcs-ref: ""
-      app.openshift.io/vcs-uri: https://github.com/sclorg/httpd-ex.git
-      deployment.kubernetes.io/revision: "3"
-      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"httpd:latest","namespace":"satest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"httpd\")].image","pause":"false"}]'
-      openshift.io/generated-by: OpenShiftWebConsole
-    creationTimestamp: "2023-08-28T14:55:15Z"
-    generation: 3
-    labels:
+kind: Deployment
+metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    app.openshift.io/route-disabled: "false"
+    app.openshift.io/vcs-ref: ""
+    app.openshift.io/vcs-uri: https://github.com/sclorg/httpd-ex.git
+    deployment.kubernetes.io/revision: "3"
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"httpd:latest","namespace":"satest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"httpd\")].image","pause":"false"}]'
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: "2023-08-28T14:55:15Z"
+  generation: 3
+  labels:
+    app: httpd
+    app.kubernetes.io/component: httpd
+    app.kubernetes.io/instance: httpd
+    app.kubernetes.io/name: httpd
+    app.kubernetes.io/part-of: httpd
+    app.openshift.io/runtime: httpd
+    app.openshift.io/runtime-version: 2.4-el7
+  name: httpd
+  namespace: satest
+  resourceVersion: "106149"
+  uid: ad088c9a-dcc2-4301-9899-1bb00ff69c98
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
       app: httpd
-      app.kubernetes.io/component: httpd
-      app.kubernetes.io/instance: httpd
-      app.kubernetes.io/name: httpd
-      app.kubernetes.io/part-of: httpd
-      app.openshift.io/runtime: httpd
-      app.openshift.io/runtime-version: 2.4-el7
-    name: httpd
-    namespace: satest
-    resourceVersion: "106149"
-    uid: ad088c9a-dcc2-4301-9899-1bb00ff69c98
-  spec:
-    progressDeadlineSeconds: 600
-    replicas: 1
-    revisionHistoryLimit: 10
-    selector:
-      matchLabels:
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
         app: httpd
-    strategy:
-      rollingUpdate:
-        maxSurge: 25%
-        maxUnavailable: 25%
-      type: RollingUpdate
-    template:
-      metadata:
-        creationTimestamp: null
-        labels:
-          app: httpd
-          deployment: httpd
-      spec:
-        containers:
-        - image: image-registry.openshift-image-registry.svc:5000/satest/httpd@sha256:26c279f31522d0d0d062c87ffe809df01b222599f109d42d329328657637842d
-          imagePullPolicy: Always
-          name: httpd
-          ports:
-          - containerPort: 8080
-            protocol: TCP
-          - containerPort: 8443
-            protocol: TCP
-          resources: {}
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-        dnsPolicy: ClusterFirst
-        restartPolicy: Always
-        schedulerName: default-scheduler
-        securityContext: {}
-        serviceAccount: httpdsa
-        serviceAccountName: httpdsa
-        terminationGracePeriodSeconds: 30
+        deployment: httpd
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/satest/httpd@sha256:26c279f31522d0d0d062c87ffe809df01b222599f109d42d329328657637842d
+        imagePullPolicy: Always
+        name: httpd
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8443
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: httpdsa
+      serviceAccountName: httpdsa
+      terminationGracePeriodSeconds: 30
