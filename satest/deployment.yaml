@@ -6,11 +6,11 @@ apiVersion: apps/v1
       app.openshift.io/route-disabled: "false"
       app.openshift.io/vcs-ref: ""
       app.openshift.io/vcs-uri: https://github.com/sclorg/httpd-ex.git
-      deployment.kubernetes.io/revision: "2"
+      deployment.kubernetes.io/revision: "3"
       image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"httpd:latest","namespace":"satest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"httpd\")].image","pause":"false"}]'
       openshift.io/generated-by: OpenShiftWebConsole
     creationTimestamp: "2023-08-28T14:55:15Z"
-    generation: 2
+    generation: 3
     labels:
       app: httpd
       app.kubernetes.io/component: httpd
@@ -21,7 +21,7 @@ apiVersion: apps/v1
       app.openshift.io/runtime-version: 2.4-el7
     name: httpd
     namespace: satest
-    resourceVersion: "105356"
+    resourceVersion: "106149"
     uid: ad088c9a-dcc2-4301-9899-1bb00ff69c98
   spec:
     progressDeadlineSeconds: 600
@@ -58,4 +58,6 @@ apiVersion: apps/v1
         restartPolicy: Always
         schedulerName: default-scheduler
         securityContext: {}
+        serviceAccount: httpdsa
+        serviceAccountName: httpdsa
         terminationGracePeriodSeconds: 30
