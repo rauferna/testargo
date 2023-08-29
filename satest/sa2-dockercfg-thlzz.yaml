@@ -17,7 +17,4 @@ metadata:
     controller: true
     kind: Secret
     name: sa2-token-sgglz
-    uid: 24e08e71-05c2-46c6-a608-9fc462b27d9d
-  resourceVersion: "477084"
-  uid: d52b95f0-57ca-4b4a-a350-824a7383cc74
 type: kubernetes.io/dockercfg
