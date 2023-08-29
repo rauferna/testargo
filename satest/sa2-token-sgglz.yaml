@@ -10,9 +10,6 @@ metadata:
     kubernetes.io/created-by: openshift.io/create-dockercfg-secrets
     kubernetes.io/service-account.name: sa2
     kubernetes.io/service-account.uid: 8da206ba-6d5b-4517-8a0b-47c2d34ac487
-  creationTimestamp: "2023-08-29T08:12:51Z"
   name: sa2-token-sgglz
   namespace: satest
-  resourceVersion: "477083"
-  uid: 24e08e71-05c2-46c6-a608-9fc462b27d9d
 type: kubernetes.io/service-account-token
