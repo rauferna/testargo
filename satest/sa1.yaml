@@ -6,4 +6,4 @@ metadata:
   name: sa1
   namespace: satest
 secrets:
-- name: sa1-dockercfg-slbsv
+- name: sa1-dockercfg-slbsvaaa
