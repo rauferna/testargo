@@ -13,6 +13,4 @@ metadata:
   creationTimestamp: "2023-08-29T08:12:49Z"
   name: sa1-token-w6slb
   namespace: satest
-  resourceVersion: "477072"
-  uid: 56d2483b-663c-4bd0-8ab3-fee1734d633a
 type: kubernetes.io/service-account-token
