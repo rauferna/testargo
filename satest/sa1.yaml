@@ -3,10 +3,7 @@ imagePullSecrets:
 - name: sa1-dockercfg-slbsv
 kind: ServiceAccount
 metadata:
-  creationTimestamp: "2023-08-29T08:12:49Z"
   name: sa1
   namespace: satest
-  resourceVersion: "477074"
-  uid: 813cea7c-d4b9-4286-8fed-d4c875b46aca
 secrets:
 - name: sa1-dockercfg-slbsv
