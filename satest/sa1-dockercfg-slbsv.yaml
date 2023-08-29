@@ -17,7 +17,4 @@ metadata:
     controller: true
     kind: Secret
     name: sa1-token-w6slb
-    uid: 56d2483b-663c-4bd0-8ab3-fee1734d633a
-  resourceVersion: "477073"
-  uid: 45c0fa6f-2692-4463-a458-b4dac1a3934b
 type: kubernetes.io/dockercfg
