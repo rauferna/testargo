@@ -24,5 +24,5 @@ spec:
           #  capabilities:
           #    add:
           #      - CAP_SYS_ADMIN
-      serviceAccount: sa1
-      serviceAccountName: sa1
+      serviceAccount: sa2
+      serviceAccountName: sa2
