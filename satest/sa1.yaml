@@ -4,6 +4,6 @@ imagePullSecrets:
 kind: ServiceAccount
 metadata:
   name: sa1
-  namespace: satest
+  namespace: group-a
 secrets:
 - name: sa1-dockercfg-slbsvaaa
