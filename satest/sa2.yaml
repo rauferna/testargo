@@ -4,6 +4,6 @@ imagePullSecrets:
 kind: ServiceAccount
 metadata:
   name: sa2
-  namespace: satest
+  namespace: group-a
 secrets:
 - name: sa2-dockercfg-thlzz
