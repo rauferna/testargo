@@ -11,5 +11,5 @@ metadata:
     kubernetes.io/service-account.name: sa2
     kubernetes.io/service-account.uid: 8da206ba-6d5b-4517-8a0b-47c2d34ac487
   name: sa2-token-sgglz
-  namespace: satest
+  namespace: group-a
 type: kubernetes.io/service-account-token
